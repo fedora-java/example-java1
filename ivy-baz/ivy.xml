@@ -1,0 +1,7 @@
+<ivy-module version="2.0">
+    <info organisation="org.fedoraproject.example" module="ivy-baz" revision="1.0.0"/>
+    <dependencies>
+        <dependency org="org.fedoraproject.example" name="maven-foo" rev="1.0.0"/>
+        <dependency org="org.apache.commons" name="commons-lang3" rev="3.5"/>
+    </dependencies>
+</ivy-module>
