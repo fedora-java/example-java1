@@ -30,11 +30,10 @@ cp -p %{SOURCE1} src/main/java/org/fedoraproject/example/
 %install
 %mvn_install
 
-# jpackage_script doesn't work in dependent scls, because it's used from base rhel
-#%%jpackage_script org.fedoraproject.example.Main '' '' maven-foo:slf4j/slf4j-api:slf4j/slf4j-simple example 1
+%jpackage_script org.fedoraproject.example.Main '' '' maven-bar:maven-foo:slf4j/slf4j-api:slf4j/slf4j-simple example 1
 
 %files -f .mfiles
-#%%{_bindir}/example
+%{_bindir}/example
 
 %changelog
 * Fri May 19 2017 Michael Simacek <msimacek@redhat.com> - 1.0.0-1

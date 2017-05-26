@@ -12,6 +12,8 @@ License: GPLv2+
 
 BuildRequires: scl-utils-build
 BuildRequires: %{?scl_prefix_java_common}scldevel
+# XXX scldevel should require javapackages-local
+BuildRequires: %{?scl_prefix_java_common}javapackages-local
 
 %description
 This is the main package for %scl Software Collection.
@@ -51,6 +53,7 @@ packages depending on the %scl Software Collection.
 # ========================
 cat <<EOF >enable
 #!/bin/bash
+. /opt/rh/%{scl_java_common}/enable
 export PATH="%{_bindir}:\${PATH:-/bin:/usr/bin}"
 export MANPATH="%{_mandir}:\${MANPATH}"
 export JAVACONFDIRS="%{_sysconfdir}/java\${JAVACONFDIRS:+:}\${JAVACONFDIRS:-}"

@@ -28,10 +28,7 @@ mkdir -p src/org/fedoraproject/example
 cp -p %{SOURCE2} src/org/fedoraproject/example/
 
 %build
-%{?scl:scl enable %{scl} %{scl_java_common} - << \EOF}
-set -e
-ant -Divy.mode=local compile
-%{?scl:EOF}
+%ant -Divy.mode=local compile
 
 %install
 %mvn_artifact ivy.xml ivy-baz.jar
