@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+    <info organisation="org.fedoraproject.example" module="ivy-publish" revision="1.0.0"/>
+    <dependencies>
+        <dependency org="org.fedoraproject.example" name="ivy-baz" rev="1.0.0"/>
+    </dependencies>
+</ivy-module>

@@ -1,0 +1,18 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="hello-ivy" default="run">
+  <path id="lib.path.id">
+    <fileset dir="lib" />
+  </path>
+  <target name="resolve">
+    <ivy:retrieve />
+  </target>
+  <target name="compile" depends="resolve">
+    <mkdir dir="target" />
+    <javac srcdir="src" destdir="target" classpathref="lib.path.id" includeAntRuntime="false"/>
+    <jar destfile="ivy-publish.jar" basedir="target"/>
+  </target>
+  <target name="publish-local" depends="compile">
+    <ivy:publish resolver="local" pubrevision="1.0.0" forcedeliver="true">
+      <artifacts pattern="[artifact].[ext]"/>
+    </ivy:publish>
+  </target>
+</project>
