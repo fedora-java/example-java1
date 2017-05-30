@@ -11,8 +11,8 @@ Source1:        build.xml
 Source2:        Main2.java
 BuildArch:      noarch
 
-BuildRequires:  %{?scl_prefix_java_common}ivy-local
-BuildRequires:  %{?scl_prefix_java_common}ant
+BuildRequires:  %{?scl_prefix_maven}ivy-local
+BuildRequires:  %{?scl_prefix_maven}ant
 BuildRequires:  %{?scl_prefix}mvn(org.fedoraproject.example:ivy-baz)
 
 %description

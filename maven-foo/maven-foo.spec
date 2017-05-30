@@ -10,9 +10,9 @@ Source0:        pom.xml
 Source1:        Foo.java
 BuildArch:      noarch
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
-BuildRequires:  %{?scl_prefix_java_common}mvn(org.slf4j:slf4j-api)
-BuildRequires:  %{?scl_prefix_java_common}mvn(org.slf4j:slf4j-simple)
+BuildRequires:  %{?scl_prefix_maven}maven-local
+BuildRequires:  %{?scl_prefix_maven}mvn(org.slf4j:slf4j-api)
+BuildRequires:  %{?scl_prefix_maven}mvn(org.slf4j:slf4j-simple)
 
 %description
 %{summary}.

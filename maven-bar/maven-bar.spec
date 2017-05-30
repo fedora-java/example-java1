@@ -10,7 +10,7 @@ Source0:        pom.xml
 Source1:        Main.java
 BuildArch:      noarch
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix_maven}maven-local
 BuildRequires:  %{?scl_prefix}mvn(org.fedoraproject.example:maven-foo)
 
 %description

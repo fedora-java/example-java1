@@ -11,9 +11,9 @@ Release: 1%{?dist}
 License: GPLv2+
 
 BuildRequires: scl-utils-build
-BuildRequires: %{?scl_prefix_java_common}scldevel
+BuildRequires: %{?scl_prefix_maven}scldevel
 # XXX scldevel should require javapackages-local
-BuildRequires: %{?scl_prefix_java_common}javapackages-local
+BuildRequires: %{?scl_prefix_maven}javapackages-local
 
 %description
 This is the main package for %scl Software Collection.
@@ -21,7 +21,7 @@ This is the main package for %scl Software Collection.
 %package runtime
 Summary: Runtime scripts for the %scl Software Collection
 Requires: scl-utils
-Requires: %{?scl_prefix_java_common}runtime
+Requires: %{?scl_prefix_maven}runtime
 
 %description runtime
 Package shipping essential scripts to work with the %scl Software
@@ -39,7 +39,7 @@ Software Collection itself.
 %package scldevel
 Summary: Development files for the %scl Software Collection
 Requires: %{name}-runtime = %{version}-%{release}
-Requires: %{?scl_prefix_java_common}scldevel
+Requires: %{?scl_prefix_maven}scldevel
 
 %description scldevel
 Package shipping development files, especially useful for development of
@@ -53,7 +53,7 @@ packages depending on the %scl Software Collection.
 # ========================
 cat <<EOF >enable
 #!/bin/bash
-. /opt/rh/%{scl_java_common}/enable
+. /opt/rh/%{scl_maven}/enable
 export PATH="%{_bindir}:\${PATH:-/bin:/usr/bin}"
 export MANPATH="%{_mandir}:\${MANPATH}"
 export JAVACONFDIRS="%{_sysconfdir}/java\${JAVACONFDIRS:+:}\${JAVACONFDIRS:-}"
